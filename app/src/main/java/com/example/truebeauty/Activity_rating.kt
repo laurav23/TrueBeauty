@@ -1,5 +1,6 @@
 package com.example.truebeauty
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,12 +20,21 @@ class Activity_rating:  AppCompatActivity() {
         binding = ActivityRatingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        val buttonView = binding.regresar
+
+        buttonView.setOnClickListener {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
+        }
+
         binding.ratingBarPersonal.rating = 3f
 
         binding.ratingBarPersonal.setOnRatingBarChangeListener { ratingBar, rating, b ->
             ratingSelected = rating
 
             mostrarDatos()
+
         }
         binding.btnAgregar.setOnClickListener { view ->
 

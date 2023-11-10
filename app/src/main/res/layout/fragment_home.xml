@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Activity_productos">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    tools:context=".ui.home.HomeFragment">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="213dp"
+        android:layout_height="435dp"
+        android:layout_marginTop="45dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/unas"
+        app:layout_constraintBottom_toTopOf="@+id/descripcionTextView"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/descripcionTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bordes_inferiores_redondeados"
-        android:orientation="vertical">
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/color5"
+        android:text="Encuentra aqui todos nuestros productos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilBuscar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp"
-            app:boxBackgroundMode="filled"
-            app:endIconCheckable="true"
-            app:endIconDrawable="@drawable/icon_buscar"
-            app:endIconMode="custom">
+    <Button
+        android:id="@+id/verMasButton"
+        android:layout_width="138dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/color6"
+        android:text="Ver Más"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcionTextView" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tietBuscar"
-                android:layout_width="399dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="1dp"
-                android:gravity="center"
-                android:hint="Productos"
-                android:imeOptions="actionDone"
-                android:inputType="text" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idCourseRV"
-        android:layout_width="386dp"
-        android:layout_height="421dp"
-        android:layout_gravity="center"
-        android:layout_margin="45dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="1"
-
-        />
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

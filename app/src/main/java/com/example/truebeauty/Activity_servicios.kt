@@ -1,61 +1,57 @@
 package com.example.truebeauty
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.truebeauty.databinding.FragmentDashboardBinding
+import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.truebeauty.adapter.RecyclerViewAdapter
+import com.example.truebeauty.data.DataSource
+import com.google.android.material.textfield.TextInputEditText
 
 class Activity_servicios : AppCompatActivity() {
-    private lateinit var binding: FragmentDashboardBinding
-    private lateinit var adaptador: Adaptadorservicios
 
-    var listaUsuarios = arrayListOf<servicios>()
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var dataSource: DataSource
+    private lateinit var adapter: RecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentDashboardBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_productos)
 
-        llenarLista()
-        setupRecyclerView()
+        val myDataset = DataSource(this).loadAffirmations()
+        val recyclerView = findViewById<RecyclerView>(R.id.idCourseRV)
+        val layoutManager = GridLayoutManager(this, 2)
 
-        binding.etBuscador.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
+        recyclerView.layoutManager = layoutManager
+        adapter = RecyclerViewAdapter(this, myDataset)
+        recyclerView.adapter = adapter
+        recyclerView.setHasFixedSize(true)
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) { }
+        val dataSource = DataSource(this)
 
-            override fun afterTextChanged(p0: Editable?) {
-                filtrar(p0.toString())
+        val searchEditText = findViewById<TextInputEditText>(R.id.tietBuscar)
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val query = s.toString()
+                val filteredData = dataSource.search(query)
+                adapter.updateData(filteredData)
             }
-
         })
-    }
 
-    fun llenarLista() {
-        listaUsuarios.add(servicios("Ana", "12.345",""))
-        listaUsuarios.add(servicios("Luis", "56.789",""))
-        listaUsuarios.add(servicios("Sergio", "98.765",","))
-        listaUsuarios.add(servicios("Cesar", "54.321",""))
-        listaUsuarios.add(servicios("Laura", "82.123",""))
-    }
-
-    fun setupRecyclerView() {
-        binding.rvLista.layoutManager = LinearLayoutManager(this)
-        adaptador = Adaptadorservicios(listaUsuarios)
-        binding.rvLista.adapter = adaptador
-    }
-
-    fun filtrar(texto: String) {
-        var listaFiltrada = arrayListOf<servicios>()
-
-        listaUsuarios.forEach {
-            if (it.nombre.lowercase().contains(texto.lowercase())) {
-                listaFiltrada.add(it)
-            }
+        // Encuentra la referencia al botón de devolución
+        val buttonDevolver = findViewById<Button>(R.id.buttonDevolver)
+        // Agrega un OnClickListener al botón de devolución
+        buttonDevolver.setOnClickListener {
+            // Navegar de regreso a HomeFragment
+            findNavController(this, R.id.navigation_dashboard).navigateUp()
         }
-
-        adaptador.filtrar(listaFiltrada)
     }
 }

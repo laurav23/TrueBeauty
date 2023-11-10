@@ -3,23 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_home"
+    >
 
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.truebeauty.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/activity_productos"
+        />
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.truebeauty.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/title_servicioa"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_menu"
         android:name="com.example.truebeauty.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/title_menu"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_tips"
+        android:name="com.example.truebeauty.ui.tips.TipsFragment"
+        android:label="@string/title_menu"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

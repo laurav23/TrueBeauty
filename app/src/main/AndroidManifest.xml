@@ -16,14 +16,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Activity_rating"
+            android:name=".Activity_productos"
             android:exported="false" />
         <activity
-            android:name=".Activity_comentarios"
+            android:name=".Activity_rating"
             android:exported="false" />
         <activity
             android:name=".Activity_perfil"
             android:exported="false" />
+
+        <activity
+            android:name=".Activity_servicios"
+            android:exported="false"
+        />
         <activity
             android:name=".BasicView"
             android:exported="false"
@@ -32,7 +37,7 @@
         <activity
             android:name=".Home"
             android:exported="false"
-            android:label="@string/title_activity_home" />
+            android:label="@string/title_a_home" />
         <activity
             android:name=".Activity_registro"
             android:exported="false" />

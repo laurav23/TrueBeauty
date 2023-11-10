@@ -5,21 +5,23 @@ import com.example.truebeauty.R
 import com.example.truebeauty.model.RecyclerData
 import java.util.Locale
 
-class DataSource (private val context: Context) {
+class DataSource(private val context: Context) {
 
     private val originalData = loadAffirmations()
-    fun loadAffirmations(): List<RecyclerData> {
+    fun loadAffirmations(): List<RecyclerData>{
         return listOf<RecyclerData>(
-            RecyclerData(R.string.title1, R.drawable.unas),
-            RecyclerData(R.string.title2, R.drawable.cfacial),
-            RecyclerData(R.string.title3, R.drawable.ccapilar),
-            RecyclerData(R.string.title4, R.drawable.maquillaje),
 
-            RecyclerData(R.string.title1, R.drawable.unas),
-            RecyclerData(R.string.title2, R.drawable.cfacial),
-            RecyclerData(R.string.title3, R.drawable.ccapilar),
-            RecyclerData(R.string.title4, R.drawable.maquillaje),
+            RecyclerData(R.string.title1, R.drawable.ironman),
+            RecyclerData(R.string.title2, R.drawable.hulk),
+            RecyclerData(R.string.title3, R.drawable.capitan),
+            RecyclerData(R.string.title4, R.drawable.spiderman),
+            RecyclerData(R.string.title5, R.drawable.thor),
 
+            RecyclerData(R.string.title1, R.drawable.ironman),
+            RecyclerData(R.string.title2, R.drawable.hulk),
+            RecyclerData(R.string.title3, R.drawable.capitan),
+            RecyclerData(R.string.title4, R.drawable.spiderman),
+            RecyclerData(R.string.title5, R.drawable.thor),
 
             )
     }
@@ -31,4 +33,7 @@ class DataSource (private val context: Context) {
                 .contains(lowerCaseQuery)
         }
     }
+
+
 }
+

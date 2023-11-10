@@ -4,37 +4,50 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Activity_servicios">
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    tools:context=".ui.dashboard.DashboardFragment">
 
-    <EditText
-        android:id="@+id/etBuscador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:hint="Buscar"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="217dp"
+        android:layout_height="424dp"
+        android:layout_marginTop="45dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/peluqueria"
+        app:layout_constraintBottom_toTopOf="@+id/descripcionTextView"
+        app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLista"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:listitem="@layout/servicios"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/descripcionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/color5"
+        android:text="Encuentra aqui todos nuestros servicios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etBuscador" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/verMasButton"
+        android:layout_width="138dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/color6"
+        android:text="Ver Más"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcionTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
