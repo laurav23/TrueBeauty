@@ -37,7 +37,7 @@ class TipsFragment : Fragment() {
 
         // Retrofit
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.185.208.120:8000/api/")  // Cambia la URL según tu configuración
+            .baseUrl("http://10.185.208.181:8000/api/")  // Cambia la URL según tu configuración
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

@@ -51,7 +51,7 @@ class Activity_productos : AppCompatActivity() {
         // Agrega un OnClickListener al botón de devolución
         buttonDevolver.setOnClickListener {
             // Navegar de regreso a HomeFragment
-            findNavController(this, R.id.navigation_home).navigateUp()
+            findNavController(this, androidx.appcompat.R.id.home).navigateUp()
         }
     }
 }

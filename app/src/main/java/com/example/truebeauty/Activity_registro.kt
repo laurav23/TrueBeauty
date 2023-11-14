@@ -8,6 +8,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.core.util.PatternsCompat
 import com.example.truebeauty.ApiConexion.ApiConexion
+import com.example.truebeauty.ImportClasses.popupalert
 import com.example.truebeauty.Traer.TraerRegistro
 import com.example.truebeauty.databinding.ActivityRegistroBinding
 import com.example.truebeauty.enviar.EnviarRegistro
@@ -19,6 +20,9 @@ import retrofit2.Response
 class Activity_registro : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroBinding
 
+
+
+    private val toast= popupalert()
     private val PASSWORD_PATTERN = Pattern.compile(
         "^(?=.*[@#$%^&+=!|°()?¡¿*.:,])(?=\\S+$).{8,}\$"
     )
@@ -109,6 +113,8 @@ class Activity_registro : AppCompatActivity() {
 
         if (!isNameValid) {
             binding.username.error = "El campo no puede estar vacío"
+
+            toast.toastWarning(this, "El campo no puede estar vacío" ,"holi")
         } else {
             binding.username.error = null
         }

@@ -2,7 +2,10 @@ package com.example.truebeauty.ImportClasses
 
 import android.app.Activity
 import android.content.Context
+import androidx.core.content.res.ResourcesCompat
 import com.example.truebeauty.R
+import www.sanju.motiontoast.MotionToast
+import www.sanju.motiontoast.MotionToastStyle
 
 class popupalert {
 
@@ -15,7 +18,7 @@ class popupalert {
             MotionToastStyle.SUCCESS,
             MotionToast.GRAVITY_BOTTOM,
             MotionToast.LONG_DURATION,
-            ResourcesCompat.getFont(context, R.font.dirtyoldtown)
+            ResourcesCompat.getFont(context, R.font.fontfamily)
         )
     }
     fun toastError(context: Context, title: String, message: String)
@@ -27,7 +30,7 @@ class popupalert {
             MotionToastStyle.ERROR,
             MotionToast.GRAVITY_BOTTOM,
             MotionToast.LONG_DURATION,
-            ResourcesCompat.getFont(context, R.font.dirtyoldtown)
+            ResourcesCompat.getFont(context, R.font.fontfamily)
         )
     }
 
@@ -41,6 +44,6 @@ class popupalert {
             MotionToastStyle.WARNING,
             MotionToast.GRAVITY_BOTTOM,
             MotionToast.LONG_DURATION,
-            ResourcesCompat.getFont(context, R.font.dirtyoldtown)
+            ResourcesCompat.getFont(context, R.font.fontfamily))
          }
 }

@@ -60,6 +60,21 @@
                 android:drawableLeft="@drawable/persona"
                 android:drawablePadding="8dp"
                 android:hint="Nombre"
+                android:fontFamily="@font/fontfamily"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/cardview_dark_background" />
+            <EditText
+                android:id="@+id/Correo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_edittext"
+                android:drawableLeft="@drawable/arroba"
+                android:drawablePadding="8dp"
+                android:hint="Correo"
+                android:fontFamily="@font/fontfamily"
+                android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background" />
@@ -73,6 +88,7 @@
                 android:drawableLeft="@drawable/contra"
                 android:drawablePadding="8dp"
                 android:hint="Contraseña"
+                android:fontFamily="@font/fontfamily"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/black"
@@ -86,23 +102,12 @@
                 android:drawableLeft="@drawable/contra"
                 android:drawablePadding="8dp"
                 android:hint="Contraseña"
+                android:fontFamily="@font/fontfamily"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background" />
-            <EditText
-                android:id="@+id/Correo"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/arroba"
-                android:drawablePadding="8dp"
-                android:hint="Correo"
-                android:inputType="textEmailAddress"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:textColorHighlight="@color/cardview_dark_background" />
+
 
             <Button
                 android:id="@+id/ReButton"
@@ -111,6 +116,8 @@
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/color6"
                 android:text="Registrate"
+                android:fontFamily="@font/fontfamily"
+                android:textStyle="bold"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 
@@ -122,6 +129,7 @@
                 android:layout_marginTop="10dp"
                 android:textSize="16dp"
                 android:text="Incio de sesion"
+                android:fontFamily="@font/fontfamily"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
