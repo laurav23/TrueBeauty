@@ -47,6 +47,8 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:glide:4.11.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
+    implementation ("com.github.gkae:MotionToast:1.0")
+
 
 
     implementation("androidx.core:core-ktx:1.12.0")
