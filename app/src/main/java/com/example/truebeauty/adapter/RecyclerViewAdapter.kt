@@ -26,7 +26,7 @@ class RecyclerViewAdapter (
             RecyclerViewHolder {
 
         val adapterLayout = LayoutInflater.from(parent.context).
-        inflate(R.layout.card_layout, parent, false)
+        inflate(R.layout.card_sercivios, parent, false)
         return RecyclerViewHolder(adapterLayout)
     }
 

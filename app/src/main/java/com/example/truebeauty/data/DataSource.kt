@@ -11,17 +11,16 @@ class DataSource(private val context: Context) {
     fun loadAffirmations(): List<RecyclerData>{
         return listOf<RecyclerData>(
 
-            RecyclerData(R.string.title1, R.drawable.ironman),
-            RecyclerData(R.string.title2, R.drawable.hulk),
-            RecyclerData(R.string.title3, R.drawable.capitan),
-            RecyclerData(R.string.title4, R.drawable.spiderman),
-            RecyclerData(R.string.title5, R.drawable.thor),
+            RecyclerData(R.string.title1, R.drawable.jabonfacial),
+            RecyclerData(R.string.title2, R.drawable.termoprotector),
+            RecyclerData(R.string.title3, R.drawable.preshampo),
+            RecyclerData(R.string.title4, R.drawable.primer),
+            RecyclerData(R.string.title5, R.drawable.bbcream),
+            RecyclerData(R.string.title5, R.drawable.rubor),
+            RecyclerData(R.string.title6, R.drawable.shampoo),
+            RecyclerData(R.string.title7, R.drawable.serum),
 
-            RecyclerData(R.string.title1, R.drawable.ironman),
-            RecyclerData(R.string.title2, R.drawable.hulk),
-            RecyclerData(R.string.title3, R.drawable.capitan),
-            RecyclerData(R.string.title4, R.drawable.spiderman),
-            RecyclerData(R.string.title5, R.drawable.thor),
+
 
             )
     }

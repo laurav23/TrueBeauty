@@ -6,13 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.example.truebeauty.Activity_productos
-import com.example.truebeauty.Activity_servicios
+import com.example.truebeauty.Activity_CrearCita
+import com.example.truebeauty.Activity_Servicios
 import com.example.truebeauty.databinding.FragmentDashboardBinding
-import com.example.truebeauty.databinding.FragmentHomeBinding
 
 class DashboardFragment : Fragment() {
 
@@ -28,17 +25,20 @@ class DashboardFragment : Fragment() {
         val root: View = binding.root
 
         val buttonVerMas: Button = binding.verMasButton
+        val buttonAgendar: Button = binding.ButtonAgendar
 
         buttonVerMas.setOnClickListener {
-            // Aquí inicia la nueva actividad o fragmento cuando se hace clic en el botón "Ver Más"
-            // Por ejemplo, iniciar una nueva actividad:
-            val intent = Intent(requireContext(), Activity_servicios::class.java)
+            val intent = Intent(requireContext(), Activity_Servicios::class.java)
             startActivity(intent)
 
-            // O iniciar un nuevo fragmento (asegúrate de tener un FragmentManager disponible):
-            // val nuevoFragmento = NuevoFragmento()
-            // fragmentManager?.beginTransaction()?.replace(R.id.contenedor, nuevoFragmento)?.commit()
         }
+        buttonAgendar.setOnClickListener {
+            val intent = Intent(requireContext(), Activity_CrearCita::class.java)
+            startActivity(intent)
+
+        }
+
+
 
         return root
     }

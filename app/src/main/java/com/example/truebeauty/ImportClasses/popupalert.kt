@@ -9,7 +9,7 @@ import www.sanju.motiontoast.MotionToastStyle
 
 class popupalert {
 
-    fun toastSuccess(context: Context, title: String, message: String)
+    fun toastSuccess(context: Context?, title: String, message: String)
     {
         MotionToast.createColorToast(
             context as Activity,
@@ -46,4 +46,6 @@ class popupalert {
             MotionToast.LONG_DURATION,
             ResourcesCompat.getFont(context, R.font.fontfamily))
          }
+
+
 }

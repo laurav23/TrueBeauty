@@ -18,7 +18,7 @@ import retrofit2.Callback
 
 class Activity_login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private val toast= popupalert()
+    private val toast = popupalert()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,51 +26,39 @@ class Activity_login : AppCompatActivity() {
         setContentView(binding.root)
 
         val textView = binding.registrate
-        val buttonView = binding.loginButton
-
         textView.setOnClickListener {
-            // Cuando se hace clic en el TextView
             val intent = Intent(this, Activity_registro::class.java)
             startActivity(intent)
         }
 
-        buttonView.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
-            startActivity(intent)
-        }
-
-
-           clickListener()
-
+        clickListener()
     }
-     //FIN
 
     private fun clickListener() {
-        binding.loginButton.setOnClickListener{
+        binding.loginButton.setOnClickListener {
             validate()
             hideKeyboard()
             getInputs()
         }
     }
+
     private fun getInputs() {
         val email = binding.email.text.toString()
         val password = binding.password.text.toString()
 
-        if(email.isNotEmpty() && password.isNotEmpty())
-        {
+        if (email.isNotEmpty() && password.isNotEmpty()) {
             loginUser(email, password)
-        }
-        else
-        {
+        } else {
             toast.toastWarning(this, "Campos incompletos", "Completa los campos")
         }
-
     }
 
     private fun loginUser(email: String, password: String) {
         if (isEmailValid(email)) {
             val loginBring = LoginBring(email, password)
-            val apiCall = ApiConexion.getApiService().loginUser(loginBring)
+            val apiService = ApiConexion.getApiService()
+            val apiCall = apiService.loginUser(loginBring)
+
             apiCall.enqueue(object : Callback<LoginSend> {
                 override fun onResponse(call: Call<LoginSend>, response: Response<LoginSend>) {
                     if (response.isSuccessful) {
@@ -79,15 +67,14 @@ class Activity_login : AppCompatActivity() {
                             val userId = it.user.id
                             AdminUser.setUserId(userId)
                             move()
-                            finish()
                         }
                     } else {
-                        toast.toastError(this@Activity_login, "Error", "Correo invalido")
+                        toast.toastError(this@Activity_login, "Error", "Correo o contraseña incorrectos")
                     }
                 }
 
                 override fun onFailure(call: Call<LoginSend>, t: Throwable) {
-                    toast.toastError(this@Activity_login, "Error", "Ha ocurrido un error inesperado " + t.localizedMessage)
+                    toast.toastError(this@Activity_login, "Error", "Ha ocurrido un error inesperado: ${t.localizedMessage}")
                 }
             })
         } else {
@@ -99,42 +86,20 @@ class Activity_login : AppCompatActivity() {
         return PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-
-
-
-    /**
-     * Function by move to MainActivity
-     */
-    private fun move() {
-        startActivity(Intent(this, Home::class.java))
-        finish()
-    }
-
-    /**
-     *  Validate email and password
-     */
     private fun validate() {
         val result = arrayOf(validateEmail(), validatePassword())
         if (false in result) {
             return
         }
-        // Si la validación es exitosa, cambia al nuevo layout.
-        switchToNewLayout()
     }
 
-    private fun switchToNewLayout() {
-        val newLayout = layoutInflater.inflate(R.layout.activity_home, null)
-        setContentView(newLayout)
-    }
-
-
-    private fun validateEmail():Boolean {
+    private fun validateEmail(): Boolean {
         val email = binding.email.text.toString()
-        return if(email.isEmpty()){
-            binding.email.error = "El campo del correo no puede estar vacio"
+        return if (email.isEmpty()) {
+            binding.email.error = "El campo del correo no puede estar vacío"
             false
-        }else if(!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()) {
-            binding.email.error = "Por favor ingresa un correo valido"
+        } else if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()) {
+            binding.email.error = "Por favor ingresa un correo válido"
             false
         } else {
             binding.email.error = null
@@ -144,9 +109,8 @@ class Activity_login : AppCompatActivity() {
 
     private fun validatePassword(): Boolean {
         val password = binding.password.text.toString()
-        return if(password.isEmpty())
-        {
-            binding.password.error = "El campo contraseña no debe estar vacio"
+        return if (password.isEmpty()) {
+            binding.password.error = "El campo contraseña no debe estar vacío"
             false
         } else {
             binding.password.error = null
@@ -156,7 +120,12 @@ class Activity_login : AppCompatActivity() {
 
     private fun hideKeyboard() {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(binding.viewRoot.windowToken,0)
+        imm.hideSoftInputFromWindow(binding.viewRoot.windowToken, 0)
+    }
+
+    private fun move() {
+        startActivity(Intent(this, Home::class.java))
+        finish()
     }
 
 

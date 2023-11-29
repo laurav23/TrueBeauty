@@ -9,8 +9,8 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.truebeauty.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/activity_productos"
+        android:label=""
+        tools:layout="@layout/fragment_home"
         />
 
     <fragment
@@ -20,13 +20,19 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_menu"
-        android:name="com.example.truebeauty.ui.notifications.NotificationsFragment"
-        android:label="@string/title_menu"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_perfil"
+        android:name="com.example.truebeauty.ui.editarper.PerfilFragment"
+        android:label="@string/title_perfil"
+        tools:layout="@layout/activity_perfil1" />
     <fragment
         android:id="@+id/navigation_tips"
         android:name="com.example.truebeauty.ui.tips.TipsFragment"
-        android:label="@string/title_menu"
-        tools:layout="@layout/fragment_notifications" />
+        android:label=""
+        tools:layout="@layout/fragment_tips" />
+    <fragment
+        android:id="@+id/navigation_products"
+        android:name="com.example.truebeauty.ui.productos.ProductsFragment"
+        android:label=""
+        tools:layout="@layout/fragment_products" />
+
 </navigation>

@@ -28,45 +28,11 @@ class TipsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel = ViewModelProvider(this).get(TipsViewModel::class.java)
 
         _binding = FragmentTipsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textTips
 
-        // Retrofit
-        val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.185.208.181:8000/api/")  // Cambia la URL según tu configuración
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        val apiService = retrofit.create(ApiService::class.java)
-        val call = apiService.getTips()
-
-        call.enqueue(object : Callback<List<Tip>> {
-            override fun onResponse(call: Call<List<Tip>>, response: Response<List<Tip>>) {
-                if (response.isSuccessful) {
-                    val tips = response.body()
-                    if (tips != null && tips.isNotEmpty()) {
-                        val firstTip = tips[0]
-                        textView.text = "ID: ${firstTip.id}\nName: ${firstTip.name}\nDescription: ${firstTip.description}\nImage: ${firstTip.image}"
-                    } else {
-                        textView.text = "No tips available."
-                    }
-                } else {
-                    val errorBody = response.errorBody()?.string()
-                    Log.e("Retrofit", "Failed to fetch tips. HTTP Code: ${response.code()}, Error body: $errorBody")
-                    textView.text = "Failed to fetch tips."
-                }
-            }
-
-            override fun onFailure(call: Call<List<Tip>>, t: Throwable) {
-                Log.e("Retrofit", "Error: ${t.message}", t)
-                textView.text = "Error: ${t.message}"
-            }
-
-        })
 
         return root
     }

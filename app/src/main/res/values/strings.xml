@@ -2,17 +2,37 @@
     <string name="app_name">TrueBeauty</string>
     <string name="image">imagen</string>
 
-    <string name="title1">UÑAS</string>
-    <string name="title2">CUIDADO FACIAL</string>
-    <string name="title3">CUIDADO CAPILAR</string>
-    <string name="title4">MAQUILLAJE</string>
+    <!-- Products Titles 1 -->
+    <string name="title1">JABON FACIAL</string>
+    <string name="title2">TERMOPROTECTOR</string>
+    <string name="title3">PRESHAMPOO</string>
+    <string name="title4">PRIMER</string>
 
+    <string name="title5">BB CREAM</string>
+    <string name="title6">RUBOR</string>
+    <string name="title7">SHAMPOO</string>
+    <string name="title8">SERUM</string>
+
+    <!-- Services Titles -->
+    <string name="manicura">MANICURA</string>
+    <string name="pedicura">PEDICURA</string>
+    <string name="tratamientos">TRATAMIENTOS CAPILARES</string>
+    <string name="cejas">CEJAS</string>
+    <string name="pestañas">PESTAÑAS</string>
+    <string name="cuidadofacial">CUIDADO FACIAL</string>
+
+    <!--Titles nav menu -->
     <string name="title_a_home">Home</string>
     <string name="title_home">Productos</string>
     <string name="title_servicioa">Servicios</string>
-    <string name="title_menu">Mas</string>
+    <string name="title_perfil">Perfil</string>
     <string name="title_tips">Tips</string>
     <string name="title_setting">setting</string>
+
+
+    <!-- Products Titles CRUD -->
+    <string name="title_of_image">setting</string>
+    <string name="this_is_a_author">setting</string>
 
 
     <!-- Preference Titles -->
@@ -26,27 +46,16 @@
     <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>
     <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="title_activity_basic_view">BasicView</string>
+
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Siguiente</string>
     <string name="previous">Anterior</string>
-    <string name="title7">IRONMAN</string>
-    <string name="title8">HULK</string>
-    <string name="title9">CAPITAN</string>
-    <string name="title10">SPIDERMAN</string>
-    <string name="title5">THOR</string>
 
-    <string name="lorem_ipsum">
-       Mision:
-        Somos True Beauty un sistema de información diseñado para satisfacer las necesidades de belleza de nuestros clientes, queremos facilitar la agenda de citas y compra de productos de determinada empresa, lo hacemos para los usuarios interesados en el cuidado facial y estética personal.
-    </string>
-    <string name="lorem_ipsum2">
-        Vision:
-        Para el año 2024 los usuarios podrán hacer uso de nuestro sistema de información compuesto por un aplicativo web y móvil, que será distinguido por facilitar al centro de belleza “True Beauty” la promoción del catálogo de productos y el portafolios de servicios, aumentando su reconocimiento a través del marketing digital.
-    </string>
+
 </resources>

@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/carrito"
         android:title="@string/title_home"
 
         />
@@ -17,14 +17,19 @@
        />
 
     <item
-        android:id="@+id/navigation_menu"
-        android:icon="@drawable/menu"
-        android:title="@string/title_menu"
+        android:id="@+id/navigation_perfil"
+        android:icon="@drawable/ic_person"
+        android:title="@string/title_perfil"
         />
     <item
         android:id="@+id/navigation_tips"
         android:icon="@drawable/menu"
-        android:title="@string/title_tips"
+        android:title="Tips"
+        />
+    <item
+        android:id="@+id/navigation_products"
+        android:icon="@drawable/icon_buscar"
+        android:title="Productos"
         />
 
 

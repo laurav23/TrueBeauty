@@ -46,7 +46,7 @@ class Activity_registro : AppCompatActivity() {
         clickListener()
 
         binding.login.setOnClickListener {
-           // toast.toastSuccess(this, "Senakitch", "Iniciar sesion")
+           toast.toastSuccess(this, "TrueBeauty", "Iniciar sesion")
             startActivity(Intent(this,Activity_login::class.java))
         }
 
@@ -70,7 +70,7 @@ class Activity_registro : AppCompatActivity() {
                 if (response.isSuccessful) {
                     move()
                 } else {
-                   // toast.toastError(this@activity_registro2, "Error", "Sucedio un error inesperado o corrige tus credenciales")
+                    toast.toastError(this@Activity_registro, "Error", "Sucedio un error inesperado o corrige tus credenciales")
                 }
             }
 
@@ -82,9 +82,12 @@ class Activity_registro : AppCompatActivity() {
     private fun move() {
         if (validate()) {
             startActivity(Intent(this@Activity_registro, Activity_login::class.java))
+            toast.toastSuccess(this@Activity_registro, "TrueBeauty", "Registrado con éxito!")
+
 
         } else {
-            showIncompleteFieldsAlert()
+           showIncompleteFieldsAlert()
+
         }
     }
 
@@ -139,4 +142,18 @@ class Activity_registro : AppCompatActivity() {
     private fun isPasswordValid(password: String, passwordConfirm: String): Boolean {
         return password == passwordConfirm && password.length >= 8 && PASSWORD_PATTERN.matcher(password).matches()
     }
+//    private fun showSuccessAlert() {
+//        val builder = AlertDialog.Builder(this@Activity_registro)
+//        builder.setTitle("Registro Exitoso")
+//        builder.setMessage("¡Usuario registrado correctamente!")
+//        builder.setPositiveButton("OK") { dialog, _ ->
+//            dialog.dismiss()
+//            move() // Opcional: Puedes redirigir a la pantalla de inicio de sesión después de confirmar la alerta
+//        }
+//
+//        val dialog = builder.create()
+//        dialog.show()
+//    }
+
+
 }
