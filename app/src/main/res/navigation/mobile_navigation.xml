@@ -20,11 +20,6 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_perfil"
-        android:name="com.example.truebeauty.ui.editarper.PerfilFragment"
-        android:label="@string/title_perfil"
-        tools:layout="@layout/activity_perfil1" />
-    <fragment
         android:id="@+id/navigation_tips"
         android:name="com.example.truebeauty.ui.tips.TipsFragment"
         android:label=""
@@ -34,5 +29,10 @@
         android:name="com.example.truebeauty.ui.productos.ProductsFragment"
         android:label=""
         tools:layout="@layout/fragment_products" />
+    <fragment
+        android:id="@+id/navigation_perfil"
+        android:name="com.example.truebeauty.ui.editarper.PerfilFragment"
+        android:label="@string/title_perfil"
+        tools:layout="@layout/activity_perfil1" />
 
 </navigation>

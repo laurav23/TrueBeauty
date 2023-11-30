@@ -12,6 +12,7 @@ import com.example.truebeauty.Traer.LoginBring
 import com.example.truebeauty.databinding.ActivityLoginBinding
 import com.example.truebeauty.enviar.AdminUser
 import com.example.truebeauty.enviar.LoginSend
+import com.example.truebeauty.ui.editarper.PerfilFragment
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Callback
@@ -25,6 +26,7 @@ class Activity_login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         val textView = binding.registrate
         textView.setOnClickListener {
             val intent = Intent(this, Activity_registro::class.java)
@@ -32,6 +34,13 @@ class Activity_login : AppCompatActivity() {
         }
 
         clickListener()
+        val returnToProfile = intent.getBooleanExtra("returnToProfile", false)
+        if (returnToProfile) {
+            val intent = Intent(this, Home::class.java)
+            intent.putExtra("selectedItemId", R.id.navigation_perfil)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun clickListener() {
@@ -123,9 +132,17 @@ class Activity_login : AppCompatActivity() {
         imm.hideSoftInputFromWindow(binding.viewRoot.windowToken, 0)
     }
 
+//    private fun move() {
+//        startActivity(Intent(this, Home::class.java))
+//        finish()
+//    }
     private fun move() {
-        startActivity(Intent(this, Home::class.java))
-        finish()
+        // Lógica para el inicio de sesión exitoso
+
+        // Después de un inicio de sesión exitoso, pasar el estado de inicio de sesión a Activity_CrearCita
+        val intent = Intent(this, Activity_CrearCita::class.java)
+        intent.putExtra("usuarioHaIniciadoSesion", true)
+        startActivity(intent)
     }
 
 

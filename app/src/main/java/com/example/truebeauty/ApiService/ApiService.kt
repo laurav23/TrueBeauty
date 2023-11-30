@@ -8,6 +8,7 @@ import com.example.truebeauty.Traer.TraerUser
 import com.example.truebeauty.enviar.EnviarRegistro
 import com.example.truebeauty.enviar.LoginSend
 import com.example.truebeauty.enviar.ProductSend
+import com.example.truebeauty.enviar.Tip
 import com.example.truebeauty.enviar.User
 import com.google.android.gms.analytics.ecommerce.Product
 import okhttp3.MultipartBody
@@ -64,6 +65,14 @@ interface ApiService {
         @Path("id") idUsuario: Int
     ): Response<String>
 
+
+
+
+
+
+
+    @GET("/api/tips")
+    fun getTips(): Call<List<Tip>>
 
 
 

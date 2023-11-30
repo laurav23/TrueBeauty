@@ -45,14 +45,14 @@ class Activity_productos : AppCompatActivity() {
             }
         })
 
-        // Encuentra la referencia al botón de devolución
-        val buttonDevolver = findViewById<Button>(R.id.buttonDevolver)
-
-        // Agrega un OnClickListener al botón de devolución
-        buttonDevolver.setOnClickListener {
-            // Navegar de regreso a HomeFragment
-            findNavController(this,R.id.navigation_home).navigateUp()
-        }
+//        // Encuentra la referencia al botón de devolución
+//        val buttonDevolver = findViewById<Button>(R.id.buttonDevolver)
+//
+//        // Agrega un OnClickListener al botón de devolución
+//        buttonDevolver.setOnClickListener {
+//            // Navegar de regreso a HomeFragment
+//            findNavController(this,R.id.navigation_home).navigateUp()
+//        }
     }
 
 }

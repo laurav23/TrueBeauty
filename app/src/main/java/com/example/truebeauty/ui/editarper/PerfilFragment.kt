@@ -75,12 +75,6 @@ class PerfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnCerrarSesion: AppCompatButton = view.findViewById(R.id.logout)
-
-        // Establecer un OnClickListener al botón para manejar el cierre de sesión
-        btnCerrarSesion.setOnClickListener {
-            logoutUser()
-        }
 
         // Asociar el ViewModel
         val editPerfilModel = ViewModelProvider(this)[PerfilViewModel::class.java]
@@ -203,6 +197,19 @@ class PerfilFragment : Fragment() {
         startActivity(intent)
         requireActivity().finish() // Finaliza la actividad actual para evitar que el usuario retroceda a la pantalla anterior
     }
+//
+//    private fun logoutUser() {
+//        val sharedPreferences = requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+//        val editor = sharedPreferences.edit()
+//        editor.remove("userToken") // Elimina el token del usuario u otros datos relacionados con la sesión
+//        editor.apply()
+//
+//        // Redirige al usuario a Activity_login y envía un indicador para regresar al perfil
+//        val intent = Intent(requireContext(), Activity_login::class.java)
+//        intent.putExtra("returnToProfile", true)
+//        startActivity(intent)
+//        requireActivity().finish()
+//    }
 
 
 

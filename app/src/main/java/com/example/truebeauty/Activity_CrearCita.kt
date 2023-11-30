@@ -1,6 +1,7 @@
 package com.example.truebeauty
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,37 @@ class Activity_CrearCita : AppCompatActivity() {
 
     private val selectedCalendar = Calendar.getInstance()
     private var selectedRadioButton: RadioButton? = null
+    private var usuarioHaIniciadoSesion = false
+
+    private fun handleLoginSuccess() {
+        // Este método se llamará después de un inicio de sesión exitoso
+        usuarioHaIniciadoSesion = true
+    }
+
+    private fun handleLogout() {
+        // Este método se llamará después de cerrar sesión
+        usuarioHaIniciadoSesion = false
+    }
+
+    private fun configurarBotonConfirmar() {
+        val btnConfirm = findViewById<Button>(R.id.Confirmar)
+
+        btnConfirm.setOnClickListener {
+            if (usuarioHaIniciadoSesion) {
+                // El usuario ha iniciado sesión, mostrar el Toast y finalizar la actividad
+                Toast.makeText(applicationContext, "Cita creada exitosamente", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, Home::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                // El usuario no ha iniciado sesión, redirigirlo al inicio de sesión
+                val intent = Intent(this, Activity_login::class.java)
+                startActivity(intent)
+                // Puedes finalizar esta actividad para que al regresar de Activity_login no se vuelva a abrir el Toast
+                finish()
+            }
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_cita)
@@ -32,13 +64,31 @@ class Activity_CrearCita : AppCompatActivity() {
             cv_siguiente.visibility = View.GONE
             cv_confirmar.visibility = View.VISIBLE
         }
-        btnConfirm.setOnClickListener {
-            Toast.makeText(applicationContext, "Cita realizada exitosamente", Toast.LENGTH_SHORT)
-                .show()
-            finish()
+
+        usuarioHaIniciadoSesion = intent.getBooleanExtra("usuarioHaIniciadoSesion", false)
+        configurarBotonConfirmar()
+//        btnConfirm.setOnClickListener {
+//
+//            Toast.makeText(applicationContext, "Cita realizada exitosamente", Toast.LENGTH_SHORT)
+//                .show()
+//            finish()
+//        btnConfirm.setOnClickListener {
+//            if (usuarioHaIniciadoSesion) {
+//                // El usuario ha iniciado sesión, mostrar el Toast y finalizar la actividad
+//                Toast.makeText(applicationContext, "Cita creada exitosamente", Toast.LENGTH_SHORT)
+//                    .show()
+//                finish()
+//            } else {
+//                // El usuario no ha iniciado sesión, redirigirlo al inicio de sesión
+//                val intent = Intent(this, Activity_login::class.java)
+//                startActivity(intent)
+//                // Puedes finalizar esta actividad para que al regresar de Activity_login no se vuelva a abrir el Toast
+//                finish()
+//            }
+//        }
 
 
-        }
+
         val spinner_especialidad = findViewById<Spinner>(R.id.spinner_especialidad)
         val spinner_estilista = findViewById<Spinner>(R.id.spinner_estilista)
 

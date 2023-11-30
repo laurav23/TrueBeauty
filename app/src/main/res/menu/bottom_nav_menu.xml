@@ -16,11 +16,7 @@
         android:title="@string/title_servicioa"
        />
 
-    <item
-        android:id="@+id/navigation_perfil"
-        android:icon="@drawable/ic_person"
-        android:title="@string/title_perfil"
-        />
+
     <item
         android:id="@+id/navigation_tips"
         android:icon="@drawable/menu"
@@ -30,6 +26,11 @@
         android:id="@+id/navigation_products"
         android:icon="@drawable/icon_buscar"
         android:title="Productos"
+        />
+    <item
+        android:id="@+id/navigation_perfil"
+        android:icon="@drawable/ic_person"
+        android:title="@string/title_perfil"
         />
 
 

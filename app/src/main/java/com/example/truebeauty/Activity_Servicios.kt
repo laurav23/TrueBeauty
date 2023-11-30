@@ -48,13 +48,14 @@ class Activity_Servicios : AppCompatActivity() {
             }
         })
 
-        // Encuentra la referencia al botón de devolución
-        val btnDevolver = findViewById<Button>(R.id.btnDevolver)
-
-        // Agrega un OnClickListener al botón de devolución
-        btnDevolver.setOnClickListener {
-            // Navegar de regreso a
-            Navigation.findNavController(this,R.id.navigation_dashboard).navigateUp()
-        }
+//        // Encuentra la referencia al botón de devolución
+//        val btnDevolver = findViewById<Button>(R.id.Devolver)
+//
+//        // Agrega un OnClickListener al botón de devolución
+//        btnDevolver.setOnClickListener {
+//            // Navegar de regreso a
+//            Navigation.findNavController(this, R.id.navigation_dashboard).navigateUp()
+//
+//        }
     }
 }
