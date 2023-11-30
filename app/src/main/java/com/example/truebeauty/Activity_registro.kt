@@ -20,9 +20,10 @@ import retrofit2.Response
 class Activity_registro : AppCompatActivity() {
     private lateinit var binding: ActivityRegistroBinding
 
+    // Inicialización de una instancia de la clase popupalert
+    private val toast = popupalert()
 
-
-    private val toast= popupalert()
+    // Patrón de contraseña
     private val PASSWORD_PATTERN = Pattern.compile(
         "^(?=.*[@#$%^&+=!|°()?¡¿*.:,])(?=\\S+$).{8,}\$"
     )
@@ -32,8 +33,7 @@ class Activity_registro : AppCompatActivity() {
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
+        // Botón para registrar usuario
         binding.ReButton.setOnClickListener {
             if (validate()) {
                 val name = binding.username.text.toString()
@@ -43,25 +43,15 @@ class Activity_registro : AppCompatActivity() {
                 registerUser(name, email, password, passwordConfirm)
             }
         }
-        clickListener()
 
+        // Botón para redirigir al login
         binding.login.setOnClickListener {
-           toast.toastSuccess(this, "TrueBeauty", "Iniciar sesion")
-            startActivity(Intent(this,Activity_login::class.java))
-        }
-
-    }
-
-
-    private fun clickListener() {
-        binding.login.setOnClickListener{
-            validate()
-
+            toast.toastSuccess(this, "TrueBeauty", "Iniciar sesión")
+            startActivity(Intent(this, Activity_login::class.java))
         }
     }
 
-
-
+    // Método para manejar la lógica de registro de usuario
     private fun registerUser(name: String, email: String, password: String, passwordConfirm: String) {
         val registerRequest = TraerRegistro(name, email, password, passwordConfirm)
         val apiCall = ApiConexion.getApiService().registeruser(registerRequest)
@@ -75,22 +65,22 @@ class Activity_registro : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<EnviarRegistro>, t: Throwable) {
-                // Handle the failure case
+                // Manejar el caso de fallo
             }
         })
     }
+
+    // Método para redirigir al usuario después del registro
     private fun move() {
         if (validate()) {
             startActivity(Intent(this@Activity_registro, Activity_login::class.java))
             toast.toastSuccess(this@Activity_registro, "TrueBeauty", "Registrado con éxito!")
-
-
         } else {
-           showIncompleteFieldsAlert()
-
+            showIncompleteFieldsAlert()
         }
     }
 
+    // Método para mostrar alerta de campos incompletos
     private fun showIncompleteFieldsAlert() {
         val builder = AlertDialog.Builder(this@Activity_registro)
         builder.setTitle("Campos Incompletos")
@@ -103,7 +93,7 @@ class Activity_registro : AppCompatActivity() {
         dialog.show()
     }
 
-
+    // Método para validar la información de registro ingresada por el usuario
     private fun validate(): Boolean {
         val email = binding.Correo.text.toString()
         val password = binding.password.text.toString()
@@ -116,8 +106,7 @@ class Activity_registro : AppCompatActivity() {
 
         if (!isNameValid) {
             binding.username.error = "El campo no puede estar vacío"
-
-            toast.toastWarning(this, "El campo no puede estar vacío" ,"holi")
+            toast.toastWarning(this, "El campo no puede estar vacío", "holi")
         } else {
             binding.username.error = null
         }
@@ -139,21 +128,8 @@ class Activity_registro : AppCompatActivity() {
         return isNameValid && isEmailValid && isPasswordValid
     }
 
+    // Método para validar la fortaleza de la contraseña
     private fun isPasswordValid(password: String, passwordConfirm: String): Boolean {
         return password == passwordConfirm && password.length >= 8 && PASSWORD_PATTERN.matcher(password).matches()
     }
-//    private fun showSuccessAlert() {
-//        val builder = AlertDialog.Builder(this@Activity_registro)
-//        builder.setTitle("Registro Exitoso")
-//        builder.setMessage("¡Usuario registrado correctamente!")
-//        builder.setPositiveButton("OK") { dialog, _ ->
-//            dialog.dismiss()
-//            move() // Opcional: Puedes redirigir a la pantalla de inicio de sesión después de confirmar la alerta
-//        }
-//
-//        val dialog = builder.create()
-//        dialog.show()
-//    }
-
-
 }

@@ -12,7 +12,6 @@ import com.example.truebeauty.Traer.LoginBring
 import com.example.truebeauty.databinding.ActivityLoginBinding
 import com.example.truebeauty.enviar.AdminUser
 import com.example.truebeauty.enviar.LoginSend
-import com.example.truebeauty.ui.editarper.PerfilFragment
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Callback
@@ -26,13 +25,14 @@ class Activity_login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        // Ir a la pantalla de registro al hacer clic en "Regístrate"
         val textView = binding.registrate
         textView.setOnClickListener {
             val intent = Intent(this, Activity_registro::class.java)
             startActivity(intent)
         }
 
+        // Configuración de los listeners y verificación del estado de inicio de sesión
         clickListener()
         val returnToProfile = intent.getBooleanExtra("returnToProfile", false)
         if (returnToProfile) {
@@ -43,6 +43,7 @@ class Activity_login : AppCompatActivity() {
         }
     }
 
+    // Listener del botón de inicio de sesión
     private fun clickListener() {
         binding.loginButton.setOnClickListener {
             validate()
@@ -51,6 +52,7 @@ class Activity_login : AppCompatActivity() {
         }
     }
 
+    // Obtener los datos ingresados por el usuario
     private fun getInputs() {
         val email = binding.email.text.toString()
         val password = binding.password.text.toString()
@@ -62,6 +64,7 @@ class Activity_login : AppCompatActivity() {
         }
     }
 
+    // Lógica de inicio de sesión
     private fun loginUser(email: String, password: String) {
         if (isEmailValid(email)) {
             val loginBring = LoginBring(email, password)
@@ -75,7 +78,7 @@ class Activity_login : AppCompatActivity() {
                         loginResponse?.let {
                             val userId = it.user.id
                             AdminUser.setUserId(userId)
-                            move()
+                            move() // Lógica para el inicio de sesión exitoso
                         }
                     } else {
                         toast.toastError(this@Activity_login, "Error", "Correo o contraseña incorrectos")
@@ -91,10 +94,12 @@ class Activity_login : AppCompatActivity() {
         }
     }
 
+    // Validar el formato del correo electrónico
     private fun isEmailValid(email: String): Boolean {
         return PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()
     }
 
+    // Validación de los campos de correo electrónico y contraseña
     private fun validate() {
         val result = arrayOf(validateEmail(), validatePassword())
         if (false in result) {
@@ -102,6 +107,7 @@ class Activity_login : AppCompatActivity() {
         }
     }
 
+    // Validación específica del campo de correo electrónico
     private fun validateEmail(): Boolean {
         val email = binding.email.text.toString()
         return if (email.isEmpty()) {
@@ -116,6 +122,7 @@ class Activity_login : AppCompatActivity() {
         }
     }
 
+    // Validación específica del campo de contraseña
     private fun validatePassword(): Boolean {
         val password = binding.password.text.toString()
         return if (password.isEmpty()) {
@@ -127,15 +134,13 @@ class Activity_login : AppCompatActivity() {
         }
     }
 
+    // Método para ocultar el teclado virtual
     private fun hideKeyboard() {
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(binding.viewRoot.windowToken, 0)
     }
 
-//    private fun move() {
-//        startActivity(Intent(this, Home::class.java))
-//        finish()
-//    }
+    // Método que se ejecuta después del inicio de sesión exitoso
     private fun move() {
         // Lógica para el inicio de sesión exitoso
 
@@ -144,6 +149,4 @@ class Activity_login : AppCompatActivity() {
         intent.putExtra("usuarioHaIniciadoSesion", true)
         startActivity(intent)
     }
-
-
 }

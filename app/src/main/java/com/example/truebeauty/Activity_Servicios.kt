@@ -24,7 +24,10 @@ class Activity_Servicios : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_servicios)
 
+        // Carga de datos desde DataServicios
         val myDataset = DataServicios(this).loadAffirmations()
+
+        // Configuración del RecyclerView y su adaptador
         val recyclerView = findViewById<RecyclerView>(R.id.idCourseRV)
         val layoutManager = GridLayoutManager(this, 2)
 
@@ -33,8 +36,10 @@ class Activity_Servicios : AppCompatActivity() {
         recyclerView.adapter = adapter
         recyclerView.setHasFixedSize(true)
 
+        // Inicialización de DataServicios
         val dataSource = DataServicios(this)
 
+        // Búsqueda dinámica en el RecyclerView a través de TextInputEditText
         val searchEditText = findViewById<TextInputEditText>(R.id.tietBuscar)
         searchEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}

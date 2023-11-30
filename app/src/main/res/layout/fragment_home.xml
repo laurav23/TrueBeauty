@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Productos"
         android:textAlignment="center"
+        android:fontFamily="@font/roboto_regular"
         android:textSize="40sp"
         android:textStyle="italic|bold"
         android:textColor="@color/color6"
@@ -55,12 +56,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="@string/title7"
+                        android:fontFamily="@font/roboto_regular"
                         android:textSize="20sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="$38.000"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -89,12 +92,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="@string/title1"
+                        android:fontFamily="@font/roboto_regular"
                         android:textSize="20sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="$22.000"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -123,6 +128,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="@string/title2"
+                        android:fontFamily="@font/roboto_regular"
                         android:textSize="20sp" />
 
                     <TextView
@@ -130,6 +136,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="$18.000"
+                        android:fontFamily="@font/roboto_regular"
                         android:textSize="14sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -157,6 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/title5"
+                    android:fontFamily="@font/roboto_regular"
                     android:textSize="20sp" />
 
                 <TextView
@@ -164,6 +172,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="$20.000"
+                    android:fontFamily="@font/roboto_regular"
                     android:textSize="14sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -180,8 +189,9 @@
         android:layout_height="59dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/color6"
+        android:fontFamily="@font/roboto_regular"
         android:text="Ver Más"
-        android:textSize="20dp" />
+        android:textSize="18dp" />
 
 
 </LinearLayout>

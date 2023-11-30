@@ -24,58 +24,26 @@ import retrofit2.http.PUT
 import retrofit2.http.Part
 import retrofit2.http.Path
 
+// Interfaz que define los métodos para interactuar con la API
 interface ApiService {
-    @POST("/api/register" )
-    fun registeruser(@Body Registromodel: TraerRegistro): Call<EnviarRegistro>
+    @POST("/api/register")
+    fun registeruser(@Body Registromodel: TraerRegistro): Call<EnviarRegistro> // Registra un usuario
 
     @POST("/api/login")
-    fun loginUser(@Body loginRequest: LoginBring):Call<LoginSend>
+    fun loginUser(@Body loginRequest: LoginBring): Call<LoginSend> // Inicia sesión de usuario
+
     @GET("/api/users/{userId}")
-    fun getUserProfile(@Path("userId") userId: String):Call<User>
+    fun getUserProfile(@Path("userId") userId: String): Call<User> // Obtiene el perfil de un usuario por su ID
 
     @PUT("api/users/{userId}")
-    fun updateProfile(@Body userRequest: TraerUser, @Path("userId") userId: String): Call<User>
-    @DELETE("/api/users/{userId}")
-    fun deleteUser(@Path("userId") userId: String): Call<Void>
+    fun updateProfile(@Body userRequest: TraerUser, @Path("userId") userId: String): Call<User> // Actualiza el perfil de usuario
 
-   @GET("/api/products")
-    fun getProduct(): Call<List<ProductSend>>
+    @DELETE("/api/users/{userId}")
+    fun deleteUser(@Path("userId") userId: String): Call<Void> // Elimina un usuario por su ID
 
     @GET("/api/products")
-    suspend fun obtenerProducts(): Response<List<ProductSend>>
-
-    @GET("/api/products/{id}")
-    suspend fun obtenerProductPorId(
-        @Path("id") id: Int
-    ): Response<ProductSend>
-
-    @POST("/api/products")
-    suspend fun agregarProducts(
-        @Body products: ProductSend
-    ): Response<String>
-
-    @PUT("/api/products/{id}")
-    suspend fun actualizarProducts(
-        @Path("id") id: Int,
-        @Body products: ProductSend
-    ): Response<String>
-
-    @DELETE("/api/products/{id}")
-    suspend fun borrarProducts(
-        @Path("id") idUsuario: Int
-    ): Response<String>
-
-
-
-
-
-
+    fun getProduct(): Call<List<ProductSend>> // Obtiene la lista de productos
 
     @GET("/api/tips")
-    fun getTips(): Call<List<Tip>>
-
-
-
-
-
+    fun getTips(): Call<List<Tip>> // Obtiene la lista de consejos
 }

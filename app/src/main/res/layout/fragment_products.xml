@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.productos.ProductsFragment"
     android:orientation="vertical"
     android:layout_marginBottom="30dp"
@@ -26,6 +26,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:text="Tus productos"
+                android:fontFamily="@font/roboto_regular"
                 android:textAlignment="center"
                 android:textColor="@color/color7"
                 android:textSize="20sp"
@@ -47,6 +48,7 @@
         android:backgroundTint="@color/color6"
         android:gravity="center"
         android:text="Subir"
+        android:fontFamily="@font/roboto_regular"
         android:textSize="14dp" />
 
 

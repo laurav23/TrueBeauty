@@ -26,6 +26,12 @@
             android:name=".Activity_Servicios"
             android:exported="false" />
         <activity
+            android:name=".ProductActivity"
+            android:exported="false">
+
+        </activity>
+
+        <activity
             android:name=".Home"
             android:exported="false"
             android:label="@string/title_a_home" />

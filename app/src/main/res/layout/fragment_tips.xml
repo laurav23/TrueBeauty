@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Tips"
         android:textAlignment="center"
+        android:fontFamily="@font/roboto_regular"
         android:textSize="40dp"
         android:textStyle="italic|bold"
         android:textColor="@color/color6"
@@ -54,6 +55,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Confianza"
                         android:textSize="20sp" />
 
@@ -61,6 +63,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="La clave más importante para lucir bella es sentirte bien contigo misma. La confianza en ti misma hace que tu belleza brille aún más."
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -89,12 +92,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Hidratación:"
+                        android:fontFamily="@font/roboto_regular"
                         android:textSize="20sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text=" Beber suficiente agua y usar cremas hidratantes ayuda a mantener la piel saludable y radiante."
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -123,6 +128,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Limpieza facial"
                         android:textSize="20sp" />
 
@@ -130,6 +136,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Lávate la cara dos veces al día para eliminar la suciedad y el exceso de grasa. Encuentra productos que se adapten a tu tipo de piel."
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -158,6 +165,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Protector solar"
                         android:textSize="20sp" />
 
@@ -165,6 +173,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Úsalo diariamente, incluso en días nublados. Proteger la piel del sol es esencial para prevenir arrugas y otros problemas."
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -193,6 +202,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Descanso adecuado"
                         android:textSize="20sp" />
 
@@ -200,6 +210,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Dormir bien es fundamental para una piel y un cuerpo saludables. Intenta dormir entre 7 y 9 horas diarias."
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -228,6 +239,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Cuidado del cabello"
                         android:textSize="20sp" />
 
@@ -235,6 +247,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Utiliza champús y acondicionadores adecuados para tu tipo de cabello. Evita el calor excesivo de secadores y planchas."
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -263,6 +276,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="Maquillaje"
                         android:textSize="20sp" />
 
@@ -270,6 +284,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
                         android:text="A veces, menos es más. No es necesario usar mucho maquillaje; a menudo, un aspecto natural resalta mejor tu belleza."
                         android:textSize="14sp" />
                 </LinearLayout>

@@ -25,7 +25,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/logo"
-            android:fontFamily="@font/fontfamily"
+            android:fontFamily="@font/roboto_regular"
             android:gravity="center"
             android:padding="15sp"
             android:textColor="@color/white"
@@ -52,8 +52,10 @@
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/fontfamily"
+                android:fontFamily="@font/roboto_regular"
                 android:inputType="textPersonName"
+                android:scrollbarSize="18dp"
+                android:background="@drawable/custom_edittext"
                 android:textColorHint="@color/black" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -81,16 +83,18 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/fontfamily"
+                android:fontFamily="@font/roboto_regular"
                 android:inputType="textEmailAddress"
+                android:scrollbarSize="18dp"
+                android:background="@drawable/custom_edittext"
                 android:text="email&#64;example.com"
                 android:textColorHint="@color/black" />
 
             <TextView
                 android:id="@+id/tvEmail"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/fontfamily"
+                android:fontFamily="@font/roboto_regular"
                 android:gravity="center"
                 android:text=""
                 android:textColor="@color/white"

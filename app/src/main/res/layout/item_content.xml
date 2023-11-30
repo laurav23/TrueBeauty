@@ -15,17 +15,17 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_marginTop="16dp"
-        android:layout_height="280dp"
+        android:layout_height="295dp"
         android:layout_marginBottom="16dp"
         android:foreground="?android:attr/selectableItemBackground"
-        card_view:cardBackgroundColor="@color/color8"
+        card_view:cardBackgroundColor="@color/color6"
         card_view:cardCornerRadius="16dp"
         card_view:cardElevation="4dp">
 
         <!-- Contenido de CardView -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="353dp"
             android:orientation="vertical">
 
             <!-- Título -->
@@ -35,9 +35,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_regular"
                 android:text="@string/title_of_image"
                 android:textAlignment="center"
-                android:textSize="18sp" />
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
             <!-- Imagen -->
             <LinearLayout
@@ -49,7 +51,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top|end"
+                    android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     android:scaleType="centerCrop"
@@ -66,9 +68,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="9dp"
+                android:fontFamily="@font/roboto_regular"
                 android:gravity="center"
                 android:text="@string/this_is_a_author"
-                android:textSize="14sp" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <!-- Descripción -->
             <TextView
@@ -78,9 +82,11 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
+                android:fontFamily="@font/roboto_regular"
                 android:gravity="center"
                 android:text="@string/this_is_a_author"
-                android:textSize="14sp" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <!-- Botones de Eliminar y Editar -->
             <LinearLayout
@@ -96,7 +102,7 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/delete" />
+                    android:background="@drawable/baseline_delete_24" />
 
                 <!-- Botón Editar -->
                 <ImageView

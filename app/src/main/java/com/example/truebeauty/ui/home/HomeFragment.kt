@@ -29,13 +29,8 @@ class HomeFragment : Fragment() {
 
         buttonVerMas.setOnClickListener {
             // Aquí inicia la nueva actividad o fragmento cuando se hace clic en el botón "Ver Más"
-            // Por ejemplo, iniciar una nueva actividad:
             val intent = Intent(requireContext(), Activity_productos::class.java)
             startActivity(intent)
-
-            // O iniciar un nuevo fragmento (asegúrate de tener un FragmentManager disponible):
-            // val nuevoFragmento = NuevoFragmento()
-            // fragmentManager?.beginTransaction()?.replace(R.id.contenedor, nuevoFragmento)?.commit()
         }
 
         return root

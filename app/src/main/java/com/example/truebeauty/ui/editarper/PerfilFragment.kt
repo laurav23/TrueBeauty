@@ -114,6 +114,7 @@ class PerfilFragment : Fragment() {
     private val _updateProfileResult = MutableLiveData<Boolean>()
     val updateProfileResult: LiveData<Boolean> get() = _updateProfileResult
 
+    // Función para actualizar el perfil del usuario
     fun updateProfile(userRequest: TraerUser, userId: String) {
         val apiService = ApiConexion.getApiService()
 
@@ -197,20 +198,6 @@ class PerfilFragment : Fragment() {
         startActivity(intent)
         requireActivity().finish() // Finaliza la actividad actual para evitar que el usuario retroceda a la pantalla anterior
     }
-//
-//    private fun logoutUser() {
-//        val sharedPreferences = requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-//        val editor = sharedPreferences.edit()
-//        editor.remove("userToken") // Elimina el token del usuario u otros datos relacionados con la sesión
-//        editor.apply()
-//
-//        // Redirige al usuario a Activity_login y envía un indicador para regresar al perfil
-//        val intent = Intent(requireContext(), Activity_login::class.java)
-//        intent.putExtra("returnToProfile", true)
-//        startActivity(intent)
-//        requireActivity().finish()
-//    }
-
 
 
 

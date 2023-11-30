@@ -5,9 +5,13 @@ import com.example.truebeauty.R
 import com.example.truebeauty.model.RecyclerData
 import java.util.Locale
 
+// Clase que gestiona los datos de los productos
 class DataSource(private val context: Context) {
 
+    // Datos originales de los productos
     private val originalData = loadAffirmations()
+
+    // Carga inicial de datos de productos
     fun loadAffirmations(): List<RecyclerData>{
         return listOf<RecyclerData>(
 
@@ -25,6 +29,7 @@ class DataSource(private val context: Context) {
             )
     }
 
+    // Función de búsqueda que filtra los servicios basados en la consulta
     fun search(query: String): List<RecyclerData> {
         val lowerCaseQuery = query.lowercase(Locale.getDefault())
         return originalData.filter {

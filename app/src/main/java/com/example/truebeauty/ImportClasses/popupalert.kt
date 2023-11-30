@@ -18,7 +18,7 @@ class popupalert {
             MotionToastStyle.SUCCESS,
             MotionToast.GRAVITY_BOTTOM,
             MotionToast.LONG_DURATION,
-            ResourcesCompat.getFont(context, R.font.fontfamily)
+            ResourcesCompat.getFont(context, R.font.roboto_regular)
         )
     }
     fun toastError(context: Context, title: String, message: String)
@@ -30,7 +30,7 @@ class popupalert {
             MotionToastStyle.ERROR,
             MotionToast.GRAVITY_BOTTOM,
             MotionToast.LONG_DURATION,
-            ResourcesCompat.getFont(context, R.font.fontfamily)
+            ResourcesCompat.getFont(context, R.font.roboto_regular)
         )
     }
 
@@ -44,7 +44,7 @@ class popupalert {
             MotionToastStyle.WARNING,
             MotionToast.GRAVITY_BOTTOM,
             MotionToast.LONG_DURATION,
-            ResourcesCompat.getFont(context, R.font.fontfamily))
+            ResourcesCompat.getFont(context, R.font.roboto_regular))
          }
 
 
