@@ -2,7 +2,7 @@ package com.example.truebeauty.data
 
 import android.content.Context
 import com.example.truebeauty.R
-import com.example.truebeauty.model.RecyclerData
+//import com.example.truebeauty.model.RecyclerData
 import com.example.truebeauty.model.RecyclerServicos
 import java.util.Locale
 

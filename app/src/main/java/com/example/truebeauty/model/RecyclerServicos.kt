@@ -8,3 +8,4 @@ data class RecyclerServicos(@StringRes val stringResourceId: Int, // ID del recu
                             @DrawableRes val imageResourceId: Int // ID del recurso drawable (imagen) para la imagen
 )
 
+//Buscar por id y  traer desde la base de datos

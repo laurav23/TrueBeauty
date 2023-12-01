@@ -12,8 +12,8 @@ import com.google.android.material.textfield.TextInputEditText
 
 class Activity_productos : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var dataSource: DataSource
+    //private lateinit var recyclerView: RecyclerView
+    //private lateinit var dataSource: DataSource
     private lateinit var adapter: RecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -105,6 +105,9 @@ class PerfilFragment : Fragment() {
             val userId = AdminUser.getUserId()
             editPerfilModel.deleteUser(userId.toString())
         }
+        binding.logout.setOnClickListener {
+            logoutUser()
+        }
     }
 
 
