@@ -27,6 +27,7 @@ import retrofit2.http.Path
 // Interfaz que define los métodos para interactuar con la API
 interface ApiService {
 
+
     @POST("/api/register")
     fun registeruser(@Body Registromodel: TraerRegistro): Call<EnviarRegistro> // Registra un usuario
 

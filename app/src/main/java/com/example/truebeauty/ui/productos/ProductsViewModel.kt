@@ -19,6 +19,7 @@ class ProductsViewModel : ViewModel() {
     // Al iniciar el ViewModel, se obtienen todos los contenidos disponibles
     init {
         getAllContent()
+
     }
 
     private val _text = MutableLiveData<String>().apply {
@@ -54,4 +55,5 @@ class ProductsViewModel : ViewModel() {
             })
         }
     }
+
 }

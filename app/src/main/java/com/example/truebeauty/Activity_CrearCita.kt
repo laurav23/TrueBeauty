@@ -24,38 +24,6 @@ class Activity_CrearCita : AppCompatActivity() {
     // Variable para almacenar el RadioButton seleccionado
     private var selectedRadioButton: RadioButton? = null
 
-    // Flag para indicar si el usuario ha iniciado sesión
-    private var usuarioHaIniciadoSesion = false
-
-    // Método llamado después de un inicio de sesión exitoso
-    private fun handleLoginSuccess() {
-        usuarioHaIniciadoSesion = true
-    }
-
-    // Método llamado después de cerrar sesión
-    private fun handleLogout() {
-        usuarioHaIniciadoSesion = false
-    }
-
-    // Configuración del botón de confirmación
-    private fun configurarBotonConfirmar() {
-        val btnConfirm = findViewById<Button>(R.id.Confirmar)
-
-        btnConfirm.setOnClickListener {
-            if (usuarioHaIniciadoSesion) {
-                // Mostrar mensaje y finalizar la actividad si el usuario ha iniciado sesión
-                Toast.makeText(applicationContext, "Cita creada exitosamente", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, Home::class.java)
-                startActivity(intent)
-                finish()
-            } else {
-                // Redirigir al usuario al inicio de sesión si no ha iniciado sesión
-                val intent = Intent(this, Activity_login::class.java)
-                startActivity(intent)
-                finish() // Finalizar esta actividad para evitar duplicados después del inicio de sesión
-            }
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,21 +40,24 @@ class Activity_CrearCita : AppCompatActivity() {
             cv_confirmar.visibility = View.VISIBLE
         }
 
-        // Obtener información sobre si el usuario ha iniciado sesión o no
-        usuarioHaIniciadoSesion = intent.getBooleanExtra("usuarioHaIniciadoSesion", false)
-        configurarBotonConfirmar()
+//        btnConfirm.setOnClickListener {
+//            Toast.makeText(applicationContext, "Cita realizada exitosamente", Toast.LENGTH_SHORT)
+//                .show()
+//            finish()
+//
+//
+//        }
 
-        // Configuración de Spinners para seleccionar especialidad y estilista
-        val spinner_especialidad = findViewById<Spinner>(R.id.spinner_especialidad)
-        val spinner_estilista = findViewById<Spinner>(R.id.spinner_estilista)
+        btnConfirm.setOnClickListener {
+            Toast.makeText(applicationContext, "Cita realizada exitosamente", Toast.LENGTH_SHORT).show()
 
-        val optionsEspecialidad = arrayOf("Cabello", "Uñas", "Cejas y pestañas")
-        spinner_especialidad.adapter =
-            ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, optionsEspecialidad)
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
 
-        val optionsEstilista = arrayOf("Estilista 1", "Estilista 2", "Estilista 3")
-        spinner_estilista.adapter =
-            ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, optionsEstilista)
+            finish() // Si deseas cerrar esta actividad después de iniciar la nueva
+        }
+
+
     }
 
     // Método para manejar la selección de la fecha programada
@@ -105,7 +76,7 @@ class Activity_CrearCita : AppCompatActivity() {
     }
 
     // Método para mostrar los botones de selección de horarios
-    private fun displayRadioButtons(){
+    fun displayRadioButtons(){
         val radioGroupLeft= findViewById<LinearLayout>(R.id.radio_grup_izq)
         val radioGroupRight= findViewById<LinearLayout>(R.id.radio_grup_der)
 

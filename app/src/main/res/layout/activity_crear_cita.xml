@@ -40,34 +40,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_regular"
-                    android:textSize="16dp"
-                    android:text="servicio"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_regular"
-                    android:textSize="16dp"
-                    android:text="Especialidad"
-                    android:layout_marginTop="12dp"/>
-
-                <Spinner
-                    android:id="@+id/spinner_especialidad"
-                    android:layout_width="match_parent"
-                    android:fontFamily="@font/roboto_regular"
-                    android:textSize="16dp"
-                    android:layout_height="wrap_content"
-                    />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="servicio"/>
 
                 <RadioGroup
                     android:layout_width="match_parent"
@@ -122,20 +94,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_regular"
-                        android:textSize="16dp"
-                        android:text="Estilista"/>
-
-                    <Spinner
-                        android:id="@+id/spinner_estilista"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_regular"
-                        android:textSize="16dp"
-                        />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

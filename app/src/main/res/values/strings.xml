@@ -22,12 +22,11 @@
     <string name="cuidadofacial">CUIDADO FACIAL</string>
 
     <!--Titles nav menu -->
-    <string name="title_a_home">Home</string>
-    <string name="title_home">Productos</string>
+    <string name="title_home">Home</string>
     <string name="title_servicioa">Servicios</string>
     <string name="title_perfil">Perfil</string>
     <string name="title_tips">Tips</string>
-    <string name="title_setting">setting</string>
+    <string name="title_productos">Productos</string>
 
 
     <!-- Products Titles CRUD -->

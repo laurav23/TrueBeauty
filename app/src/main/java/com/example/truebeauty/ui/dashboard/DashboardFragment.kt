@@ -28,7 +28,7 @@ class DashboardFragment : Fragment() {
 
         // Obtener referencias a los botones en la vista
         val buttonVerMas: Button = binding.verMasButton
-        val buttonAgendar: Button = binding.ButtonAgendar
+
 
         // Configurar el evento clic para el botón "Ver Más" que abre la actividad de servicios
         buttonVerMas.setOnClickListener {
@@ -36,11 +36,7 @@ class DashboardFragment : Fragment() {
             startActivity(intent)
         }
 
-        // Configurar el evento clic para el botón "Agendar" que abre la actividad de crear cita
-        buttonAgendar.setOnClickListener {
-            val intent = Intent(requireContext(), Activity_CrearCita::class.java)
-            startActivity(intent)
-        }
+
 
         return root // Devolver la vista raíz del fragmento
     }

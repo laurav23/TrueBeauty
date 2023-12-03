@@ -34,7 +34,7 @@
         <activity
             android:name=".Home"
             android:exported="false"
-            android:label="@string/title_a_home" />
+            android:label="@string/title_home" />
         <activity
             android:name=".Activity_registro"
             android:exported="false" />

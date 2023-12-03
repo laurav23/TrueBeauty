@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiConexion {
     // URL base para la conexión a la API
-    val baseUrl = "http://10.185.208.98:8000"
+    val baseUrl = "http://192.168.0.6:8000"
 
     // Función privada que crea y devuelve una instancia de Retrofit
     private fun getRetrofit(): Retrofit {

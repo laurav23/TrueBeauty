@@ -7,6 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="filled"
+            app:endIconMode="custom"
+            app:endIconCheckable="true"
+            app:endIconDrawable="@drawable/icon_buscar"
+            android:padding="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tietBuscar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Productos"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="16dp"
+                android:layout_gravity="center"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:layout_margin="8dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,66 +45,21 @@
         android:padding="10dp"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etsku"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:hint="Introduce el sku"
-            android:inputType="text" />
-        <EditText
-            android:id="@+id/etNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:hint="Introduce el nombre"
-            android:inputType="text" />
-        <EditText
-            android:id="@+id/etdescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:hint="Introduce la descripcion"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/etPrecio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:hint="Introduce el Precio"
-            android:inputType="textEmailAddress" />
-        <EditText
-            android:id="@+id/etquantity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:hint="Introduce la cantidad"
-            android:inputType="text" />
-        <EditText
-            android:id="@+id/etstatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="5dp"
-            android:hint="Introduce el estado"
-            android:inputType="text" />
-
-
         <Button
-            android:id="@+id/btnAddUpdate"
+            android:id="@+id/btnCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Agregar producto"
-            android:backgroundTint="@color/color11"/>
+            android:backgroundTint="@color/purple"
+            android:text="Nuevo producto"/>
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvProducts"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="5dp"
         android:padding="10dp"
-        tools:listitem="@layout/item_rv_product" />
+        tools:listitem="@layout/card_product"/>
 
 </LinearLayout>
